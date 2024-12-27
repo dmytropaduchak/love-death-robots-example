@@ -57,7 +57,9 @@ export const App: FC = () => {
           <Typography variant="h2">
             Love, Death + Robots SVG icon
           </Typography>
-          <div>...</div>
+          <Typography variant="body1">
+            A React library that provides beautifully designed SVG icons inspired by the aesthetics of Love, Death + Robots. Perfect for modern UIs, this lightweight package offers customizable and scalable icons to enhance your web or mobile applications.
+          </Typography>
         </Box>
 
         <Box sx={{
@@ -67,9 +69,25 @@ export const App: FC = () => {
             Installation
           </Typography>
           <Typography variant="body1">
-            Run one of the following commands to install it and save it to your package.json dependencies:
+            Run one of the following commands to install it and save it to your package.json dependencies
           </Typography>
-          <Box sx={{ width: '100%', typography: 'body1', backgroundColor: 'rgb(29, 31, 33)', marginTop: 1 }}>
+          <Box sx={{
+            borderRadius: '8px',
+            width: '100%',
+            typography: 'body1',
+            backgroundColor: 'rgb(29, 31, 33)',
+            marginTop: 1,
+            '& .MuiTabs-root': {
+              minHeight: 'auto',
+              'button': {
+                maxWidth: 'auto',
+                minWidth: 'auto',
+                minHeight: 'auto',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '10px',
+              }
+            },
+          }}>
             <TabContext value={packageManager}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={onChange}>
@@ -101,11 +119,22 @@ export const App: FC = () => {
             Usage
           </Typography>
           <Typography variant="body1">
-            Import icons using one of these two options:
+            To start using the icons, first import the desired component from the library
           </Typography>
-          <div>
-            ...
-          </div>
+          <Box sx={{
+            'pre': {
+              margin: '0px !important',
+              padding: '1em !important',
+              borderRadius: '8px',
+            },
+            width: '100%',
+            marginTop: 1,
+            marginBottom: 2,
+          }}>
+            <SyntaxHighlighter language="typescript" style={style}>
+              {`import { LoveDeathRobots } from '@dmytropaduchak/love-death-robots';`}
+            </SyntaxHighlighter>
+          </Box>
         </Box>
 
         <Box sx={{
@@ -114,6 +143,30 @@ export const App: FC = () => {
           <Typography variant="h5">
             Color
           </Typography>
+          <Typography variant="body1">
+            Customize the color of the icon by passing the color prop. This allows you to match the icon’s appearance to your design or theme
+          </Typography>
+
+          <Box sx={{
+            'pre': {
+              margin: '0px !important',
+              padding: '1em !important',
+              borderRadius: '8px',
+            },
+            width: '100%',
+            marginTop: 1,
+            marginBottom: 1,
+          }}>
+            {/* <SyntaxHighlighter language="typescript" style={style}>
+              {`<LoveDeathRobotIcon color="#9e9e9e" />
+<LoveDeathRobotIcon color="#2196f3" />
+<LoveDeathRobotIcon color="#9c27b0" />
+<LoveDeathRobotIcon color="#4caf50" />
+<LoveDeathRobotIcon color="#f44336" />
+<LoveDeathRobotIcon color="#ffeb3b" />`}
+            </SyntaxHighlighter> */}
+          </Box>
+
           <Stack spacing={1} direction="row" alignItems="center">
             <LoveDeathRobots />
             <LoveDeathRobots color={grey[500]} />
